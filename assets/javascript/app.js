@@ -1,72 +1,112 @@
 $(document).ready(function () {
 
+    // variable to contain selected tv shows
+    var topics = ["Supernatural", "The Flash", "Arrow", "The Chilling Adventures of Sabrina", "Doctor Who", "Legacy", "The Mandolorian"]
 
-var televisionShows = ["Supernatural","The Flash", "Arrow", "The Chilling Adventures of Sabrina", "Doctor Who", "Legacy", "The Mandolorian"]    
+
+    // function to display Television Show info from the API
+
+    function displayInfo() {
+        $("#televison-view").empty();
+        var televisionShow = $(this).attr("data-name");
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=ZMDyyJt0yDpWObBq4SEvE8f8YENUS7fz&q" + televisionShow + "=&limit=10&offset=0&rating=PG&lang=en";
+
+        // call on AJAX for info
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+
+            .then(function (response) {
+
+                if (response.pagination.total_count == 0) {
+                    var itemIndex = topics.indexOf(televisionShow);
+                    if (itemIndex > -1) {
+                        televisionShow.splice(itemIndex, 1);
+                        renderButtons();
+                    }
+                }
+                var results = repsonse.data;
+                for (var i = 0; i < results.length; i++) {
+                    var newShows = $("<div class='television-name'>");
+                    var gifRating = $("<p>").text("Rating: " + results[i].rating.toUpperCase());
+                    var gifTitle = $("<p>").text("Title:  " + results[i].title.toUpperCase());
+                    var gifURL = results[i].images.fixed_height_still.url;
+                    var gif = $("<img>");
+                    gif.attr("src", gifURL);
+                    gif.attr("data-still", results[i].images.fixed_height_still.url);
+                    gif.attr("data-animate", resultsi[i].images.fixed_heigth.url);
+                    gif.attr('data-state', 'still');
+                    gif.addClass('animate-gif');
 
 
-// function to display Television Show info from the API
+                    newShows.append(gifRating);
+                    newShows.append(gifTitle);
+                    newShows.append(gif);
 
-function displayInfo() {
-    $("#televison-view").empty();
-    var topic = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=ZMDyyJt0yDpWObBq4SEvE8f8YENUS7fz&q" + televisionShows + "=&limit=10&offset=0&rating=PG&lang=en";
+                    $("#television-view").prepend(newShows);
+                }
 
-    $.ajax ({
-        url: queryURL,
-        method: "GET"
-    })
-    
-    .then(function(response){
+            });
 
-    if (response.pagination.total_count ===0) {
-        var itemIndex = televisionShows.indexOf(topic);
-        if (itemIndex > -1) {
-            topic.splice(itemIndex, 1);
-            renderButtons();
+        function renderButtons() {
+            $(".button-view").empty();
+
+            for (var i = 0; i < topics.length; i++) {
+                var makeButtons = $('<button>');
+                makeButtons.addClass('topics btn btn-info');
+                makeButtons.attr('data-name', topics[i]);
+                $('.buttons-view').append(makeButtons);
+            }
         }
-    }
-   var results = repsonse.data;
-   for(var i = 0; j<results.length; i++){
-       var newShows = $("<div class='television-name'>");
-       var gifRating = $("<p>").text("Rating: " + results[i].rating.toUpperCase());
-        var gifTitle = $("<p>").text("Title:  " + results[i].title.toUpperCase());
-        var gif = $("<img>");
-        gif.attr("src", gifURL);
-        gif.attr("data-still", results[i].images.fixed_height_still.url);
-        gif.attr("data-animate", resultsi[i].images.fixed_heigth.url);
-        gif.attr('data-state', 'still');
-        gif.addClass('animate-gif');
-   
-   
-        newShows.append(gifRating);
-        newShows.append(gifTitle);
-        newShows.append(gif);
+            // function removeButtons() {
+            //     $("#television-view").empty();
+            //     var televisionShow = $(this).attr('data-name');
+            //     var itemIndex = televisionShows.indexOf(televisionShows);
+            //     if (itemIndex > -1) {
+            //         televisionShows.splice(itemindex, 1)
+            //         renderButtons();
+            //     }
 
-        $("#television-view").prepend(newShows);
-    }
-   
+            // }
+        }
+        // function to play or still the GIF image
+
+        function gifPlay() {
+            var state = $(this).attr('data-state');
+            if (state === 'still') {
+                $(this).attr('src', $(this).attr('data-animate'));
+                $(this).attr('data-state', 'animate');
+            }
+            else {
+                $(this).attr('src', $(this).attr('data-still'));
+                $(this).attr('data-state', 'still');
+
+            }
+        }
+
+        // event listeners
+        $("#add-show").on("click", function (event) {
+            event.preventDefault();
+
+            var tvShow = $("#television-input").val().trim();
+
+            if (topics.toString().toLowerCase().indexOf(tvShow.toLowerCase()) != -1) {
+            }
+            else {
+                topics.push(tvShow);
+                renderButtons;
+            }
+        });
+
+        // click tv button to display Gifs and info from API
+
+        $(document).on("click", "televisionShow", displayInfo);
+
+        // click to animate or still a GIF
+        $(document).on("click", ".animate-gif", gifPlay);
+
+    
+        renderButtons();
+
     });
-
-    function renderButtons(){
-        $(".button-view").empty();
-
-      for (var i = 0; i < televisionShows.length; i++){
-          var makeButtons =$('<button>');
-          makeButtons.addClass('televisionShows btn btn-info');
-          makeButtons.attr('data-name', televisionShows[i]);
-          $('.buttons-view').append(makeButtons); 
-      }  
-    }
-
-
-}
-
-
-
-
-
-
-
-
-
-})
