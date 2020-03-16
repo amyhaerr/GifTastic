@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <div class="container-fluid">
         <div class="row">
@@ -15,11 +17,13 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h2>
-                           GIFTastic... the search for TV GIFS
+                            GIFTastic... the search for TV GIFS
                         </h2>
                     </div>
                 </div>
-                <div class="buttons-view"></div>
+                <div class="row">
+                    <div class="buttons-view"></div>
+                </div>
                 <div class="row">
                     <div class="col-md-3">
                     </div>
@@ -30,14 +34,15 @@
                     <div class="col-md-3">
                         <form role="form">
                             <div class="form-group">
-                                 
-                                <label for="television-input">
+
+                                <label for="inputText">
                                     Television Shows
                                 </label>
-                                <input type="text" class="form-control" id="inputText" />
-                                <input class="btn btn-warning" id="add-show" type="submit" value="Submit">
+                                <input type="text" class="form-control" id="inputText">
                             </div>
-
+                            <button class="btn btn-warning" id="add-show" type="button">
+                                Submit
+                            </button>
                         </form>
                     </div>
                     <div id="television-view"></div>
@@ -46,7 +51,8 @@
         </div>
     </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
-<script src="assets/javascript/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="assets/javascript/app.js"></script>
 </body>
+
 </html>
