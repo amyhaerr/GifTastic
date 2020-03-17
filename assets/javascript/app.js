@@ -25,10 +25,11 @@ $(document).ready(function () {
                     if (itemIndex > -1) {
                         topics.splice(itemIndex, 1);
                         renderButtons();
+                        
                     }
                 }
                 // save response from API call to a variable
-                var results = repsonse.data;
+                var results = response.data;
                 for (var i = 0; i < results.length; i++) {
                     var newShows = $("<div class='television-name'>");
                     var gifRating = $("<p>").text("Rating: " + results[i].rating.toUpperCase());
@@ -47,6 +48,7 @@ $(document).ready(function () {
                     newShows.append(gif);
 
                     $("#television-view").prepend(newShows);
+                    
                 }
 
             });
