@@ -38,7 +38,7 @@ $(document).ready(function () {
                     var gif = $("<img>");
                     gif.attr("src", gifURL);
                     gif.attr("data-still", results[i].images.fixed_height_still.url);
-                    gif.attr("data-animate", resultsi[i].images.fixed_height.url);
+                    gif.attr("data-animate", results[i].images.fixed_height.url);
                     gif.attr('data-state', 'still');
                     gif.addClass('animate-gif');
 
@@ -100,7 +100,7 @@ $(document).ready(function () {
         }
         else {
             topics.push(tvShow);
-            renderButtons;
+            renderButtons();
         }
     });
 
@@ -110,7 +110,7 @@ $(document).ready(function () {
 
     // click to animate or still a GIF
     $(document).on("click", ".animate-gif", gifPlay);
-    removeButtons();
+    renderButtons();
 
 
 });
