@@ -1,7 +1,7 @@
  https://amyhaerr.github.io/GifTastic/
 
 
-<img src="assets/images/television.png" width="100" >
+<img src="assets/images/television.png" >
 
 
 # GifTastic (television shows)
