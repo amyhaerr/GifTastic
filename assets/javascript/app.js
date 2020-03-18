@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     // variable to contain selected tv shows
-    var topics = ["Supernatural", "The Flash", "Arrow", "The Chilling Adventures of Sabrina", "Doctor Who", "The Mandolorian"]
+    var topics = ["Supernatural", "The Flash", "Arrow", "The Chilling Adventures of Sabrina", "Doctor Who", "The Big Bang Theory", "Family Guy", "Legacies", "The Vampire Diaries"]
 
 
     // function to display Television Show info from the API
