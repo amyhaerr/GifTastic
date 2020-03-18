@@ -15,8 +15,8 @@ background-size: 50%;
 label {
     font-family: 'Indie Flower', cursive;
     font-size: 30px;
-    color: aqua;
+    color: black;
     font-weight: bold;
-    text-shadow: black;
+    text-shadow: white 1px;
 }
 
