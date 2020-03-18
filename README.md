@@ -1,7 +1,11 @@
  https://amyhaerr.github.io/GifTastic/
 
 
+<<<<<<< HEAD
 <img src="assets/images/television.png">
+=======
+<img src="assets/images/television.png" >
+>>>>>>> a1d15847ed0b875d54188546bfbfbfb9acaf771e
 
 
 # GifTastic (television shows)
@@ -16,7 +20,10 @@ To use the Giphy API to make a dynamic web page that populates with gifs of tele
 3. When the image is clicked again, the gif will stop animating.
 4. A rating and title are displayed above every gif image, which is provided by the GIPHY API.
 5. There is a side box for adding a user television show to the buttons. 
+<<<<<<< HEAD
 
+=======
+>>>>>>> a1d15847ed0b875d54188546bfbfbfb9acaf771e
 
 ## Author:
 Amy Haerr
