@@ -21,3 +21,6 @@ label {
     padding: 10px;
 }
 
+.television-name {
+    float: left;
+}
