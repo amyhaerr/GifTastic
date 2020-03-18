@@ -3,6 +3,7 @@ padding: 20px;
 text-align: center;
 font-family: 'Indie Flower', cursive;
 font-size: 50px;
+
 }
 
 body {
@@ -16,5 +17,6 @@ label {
     font-size: 30px;
     color: aqua;
     font-weight: bold;
+    text-shadow: black;
 }
 
