@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     // variable to contain selected tv shows
-    var topics = ["Supernatural", "The Flash", "Arrow", "The Chilling Adventures of Sabrina", "Doctor Who", "The Big Bang Theory", "Family Guy", "Legacies", "The Vampire Diaries"]
+    var topics = ["Supernatural", "The Flash", "Arrow", "The Chilling Adventures of Sabrina", "Doctor Who", "The Big Bang Theory", "Legacies", "The Vampire Diaries"]
 
 
     // function to display Television Show info from the API
@@ -44,8 +44,8 @@ $(document).ready(function () {
 
 
                     newShows.append(gifRating);
-                    newShows.append(gifTitle);
-                    newShows.append(gif);
+                    newShows.prepend(gifTitle);
+                    newShows.prepend(gif);
 
                     $("#television-view").prepend(newShows);
                     
