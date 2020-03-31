@@ -21,11 +21,11 @@ $(document).ready(function () {
 
                 if (response.pagination.total_count == 0) {
                     var itemIndex = topics.indexOf(televisionShow);
-                    
+
                     if (itemIndex > -1) {
                         topics.splice(itemIndex, 1);
                         renderButtons();
-                        
+
                     }
                 }
                 // save response from API call to a variable
@@ -48,7 +48,7 @@ $(document).ready(function () {
                     newShows.prepend(gif);
 
                     $("#television-view").prepend(newShows);
-                    
+
                 }
 
             });
