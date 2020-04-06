@@ -17,6 +17,14 @@ To use the Giphy API to make a dynamic web page that populates with gifs of tele
 4. A rating and title are displayed below every gif image, which is provided by the GIPHY API.
 5. There is a side box for adding a user television show to the buttons. 
 
+## Technical Aspects:
+
+1. Description of Problem:
+    - To use GIPHY API to make a dynamic web page that populates gifs of television shows.
+2. How it was solved:
+    - After countless hours of research, reviews of previous activities, study groups, tutor support, and TA support, I arrived at a working GifTastic web application.
+    - It also took trial and error to get the buttons to populate in the correct location and launch the selected television show gifs.
+
 ## Author:
 Amy Haerr
 
